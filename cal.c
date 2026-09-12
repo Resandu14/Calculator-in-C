@@ -3,28 +3,41 @@
 
 int main(void)
 {
-    long x = get_long("First No: ");
-    char o = get_char("Operation: ");
-    long y = get_long("Last No: ");
-
-    if( o == '+')
+    float x = get_float("First No: ");
+    char o;
+    while (true)
     {
-        printf("Answer is %ld\n", x + y);
+        o = get_char("Operation: ");
+
+        if (o != '+' && o != '-' && o != '*' && o != '/')
+        {
+            continue;
+        }
+        else
+        {
+            break;
+        }
     }
 
-    if( o == '-')
+    float y = get_float("Last No: ");
+
+    if (o == '+')
     {
-        printf("Answer is %ld\n", x - y);
+        printf("Answer is %.5g\n", x + y);
     }
 
-    if(o == '*')
+    if (o == '-')
     {
-        printf("Answer is %ld\n", x * y);
+        printf("Answer is %.5g\n", x - y);
     }
 
-    if( o == '/')
+    if (o == '*')
     {
-        printf("Answer is %ld\n", x / y);
+        printf("Answer is %.5g\n", x * y);
+    }
+
+    if (o == '/')
+    {
+        printf("Answer is %.5g\n", x / y);
     }
 }
-
